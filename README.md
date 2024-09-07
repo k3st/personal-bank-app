@@ -14,6 +14,7 @@ npm init (first time to run)
 
 npm install query-string
 npm install react-countup
+npm install react-chartjs-2
 
 First, run the development server:
 
