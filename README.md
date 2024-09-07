@@ -15,6 +15,7 @@ npm init (first time to run)
 npm install query-string
 npm install react-countup
 npm install react-chartjs-2
+npx shadcn@latest add sheet
 
 First, run the development server:
 
