@@ -8,14 +8,18 @@ Git
 Node.js
 npm (Node Package Manager)
 
-npm init (first time to run)
+## npm Dependencies
 
-## npm dependencies
+`npm init` when running the application for the first time
 
+```bash
 npm install query-string
 npm install react-countup
 npm install react-chartjs-2
 npx shadcn@latest add sheet
+npx shadcn@latest add form
+npx shadcn@latest add form button input
+```
 
 First, run the development server:
 
