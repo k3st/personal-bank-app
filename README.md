@@ -19,6 +19,7 @@ npm install react-chartjs-2
 npx shadcn@latest add sheet
 npx shadcn@latest add form
 npx shadcn@latest add form button input
+npm install node-appwrite
 ```
 
 First, run the development server:
