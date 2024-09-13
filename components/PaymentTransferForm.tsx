@@ -12,6 +12,9 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -42,8 +45,8 @@ const PaymentTransferForm = () => {
           name="senderBank"
           render={() => (
             <FormItem className="border-t border-gray-200">
-              <div className="payment-transfer_form-item">
-                <div className="payment-tranfer_form-content">
+              <div className="payment-transfer_form-item pb-5 pt-5">
+                <div className="payment-transfer_form-content">
                   <FormLabel className="text-14 font-medium text-gray-700">
                     Select Source Bank
                   </FormLabel>
@@ -53,6 +56,9 @@ const PaymentTransferForm = () => {
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
+                    <h2 className="flex items-center justify-center font-bold text-18">
+                      SERVICE UNAVAILABLE
+                    </h2>
                     {/* <BankDropdown
                   accounts={accounts}
                   setValue={form.setValue}
@@ -67,11 +73,11 @@ const PaymentTransferForm = () => {
         />
         <FormField
           control={form.control}
-          name="senderBank"
-          render={() => (
+          name="name"
+          render={(field) => (
             <FormItem className="border-t border-gray-200">
-              <div className="payment-transfer_form-item">
-                <div className="payment-tranfer_form-content">
+              <div className="payment-transfer_form-item pb-5 pt-5">
+                <div className="payment-transfer_form-content">
                   <FormLabel className="text-14 font-medium text-gray-700">
                     Transfer Note (Optional)
                   </FormLabel>
@@ -82,11 +88,11 @@ const PaymentTransferForm = () => {
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    {/* <BankDropdown
-                  accounts={accounts}
-                  setValue={form.setValue}
-                  otherStyles="!w-full"
-                /> */}
+                    <Textarea
+                      placeholder="Write a short note here"
+                      className="input-class"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage className="text-12 text-red-500" />
                 </div>
@@ -104,25 +110,22 @@ const PaymentTransferForm = () => {
         </div>
         <FormField
           control={form.control}
-          name="senderBank"
-          render={() => (
+          name="sharableId"
+          render={(field) => (
             <FormItem className="border-t border-gray-200">
-              <div className="payment-transfer_form-item">
-                <div className="payment-tranfer_form-content">
-                  <FormLabel className="text-14 font-medium text-gray-700">
+              <div className="payment-transfer_form-item pb-5 pt-5 ">
+                <div className="payment-transfer_form-content">
+                  <FormLabel className="text-14 w-full max-w-[280px] font-medium text-gray-700">
                     Recipient Email Address
                   </FormLabel>
-                  <FormDescription className="text-12 font-normal text-gray-600">
-                    Select the bank account you want to transfer funds from
-                  </FormDescription>
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    {/* <BankDropdown
-                  accounts={accounts}
-                  setValue={form.setValue}
-                  otherStyles="!w-full"
-                /> */}
+                    <Input
+                      placeholder="Enter email address"
+                      className="input-class"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage className="text-12 text-red-500" />
                 </div>
@@ -133,25 +136,21 @@ const PaymentTransferForm = () => {
         <FormField
           control={form.control}
           name="senderBank"
-          render={() => (
+          render={(field) => (
             <FormItem className="border-t border-gray-200">
-              <div className="payment-transfer_form-item">
-                <div className="payment-tranfer_form-content">
+              <div className="payment-transfer_form-item pb-5 pt-5">
+                <div className="payment-transfer_form-content">
                   <FormLabel className="text-14 font-medium text-gray-700">
                     Recipient's Bank Account Number
                   </FormLabel>
-                  <FormDescription className="text-12 font-normal text-gray-600">
-                    Please provide any additional information or instructions
-                    related to the transfer
-                  </FormDescription>
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    {/* <BankDropdown
-                  accounts={accounts}
-                  setValue={form.setValue}
-                  otherStyles="!w-full"
-                /> */}
+                    <Input
+                      placeholder="Enter account number"
+                      className="input-class"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage className="text-12 text-red-500" />
                 </div>
@@ -161,26 +160,22 @@ const PaymentTransferForm = () => {
         />
         <FormField
           control={form.control}
-          name="senderBank"
-          render={() => (
+          name="amount"
+          render={(field) => (
             <FormItem className="border-t border-gray-200">
               <div className="payment-transfer_form-item">
-                <div className="payment-tranfer_form-content">
+                <div className="payment-transfer_form-content">
                   <FormLabel className="text-14 font-medium text-gray-700">
                     Amount
                   </FormLabel>
-                  <FormDescription className="text-12 font-normal text-gray-600">
-                    Please provide any additional information or instructions
-                    related to the transfer
-                  </FormDescription>
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    {/* <BankDropdown
-                accounts={accounts}
-                setValue={form.setValue}
-                otherStyles="!w-full"
-              /> */}
+                    <Input
+                      placeholder="Enter the public account number"
+                      className="input-class"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage className="text-12 text-red-500" />
                 </div>
@@ -188,6 +183,11 @@ const PaymentTransferForm = () => {
             </FormItem>
           )}
         />
+        <div className="payment-transfer_btn-box">
+          <Button type="submit" className="payment-transfer_btn" disabled>
+            Transfer Funds
+          </Button>
+        </div>
       </form>
     </Form>
   );
