@@ -40,6 +40,14 @@ const PaymentTransferForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(submit)} className="flex flex-col">
+        <div className="payment-transfer_form-details">
+          <h2 className="text-18 font-semibold text-gray-950">
+            Transfer details
+          </h2>
+          <p className="text-16 font-normal text-gray-600">
+            Enter the details of the recipient
+          </p>
+        </div>
         <FormField
           control={form.control}
           name="senderBank"
