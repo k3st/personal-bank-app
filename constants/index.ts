@@ -77,15 +77,15 @@ export const topCategoryStyles = {
     icon: "/icons/coins.svg",
   },
   default: {
-    bg: "bg-pink-25",
-    circleBg: "bg-pink-100",
+    bg: "bg-blue-25",
+    circleBg: "bg-blue-100",
     text: {
-      main: "text-pink-900",
-      count: "text-pink-700",
+      main: "text-blue-900",
+      count: "text-blue-700",
     },
     progress: {
-      bg: "bg-pink-100",
-      indicator: "bg-pink-700",
+      bg: "bg-blue-100",
+      indicator: "bg-blue-700",
     },
     icon: "/icons/shopping-bag.svg",
   },
