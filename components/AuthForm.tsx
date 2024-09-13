@@ -207,7 +207,6 @@ const AuthForm = ({ type }: { type: string }) => {
               {type === "sign-in" ? "Sign up" : " Sign in"}
             </Link>
           </footer>
-          {console.log(type)}
         </>
       )}
     </section>
