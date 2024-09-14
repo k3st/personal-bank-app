@@ -64,7 +64,6 @@ export async function getLoggedInUser() {
 
 export const logoutAccount = async () => {
   try {
-    console.log("logoutAccount");
     const { account } = await createSessionClient();
     cookies().delete("appwrite-session");
 

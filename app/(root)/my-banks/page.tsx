@@ -38,12 +38,8 @@ const MyBanks = async () => {
           <div className="flex  flex-wrap justify-start gap-6 max-sm:justify-center ">
             {banks &&
               banks.map((bank, index) => (
-                <div className="">
-                  <BankCard
-                    key={index}
-                    account={bank}
-                    userName={bank.name || user.name}
-                  />
+                <div className="" key={index}>
+                  <BankCard account={bank} userName={bank.name || user.name} />
                   <div className="mb-5">
                     <div className="flex flex-row justify-between mb-2 mt-2">
                       <p className=" flex text-sm ">Spending this month</p>
