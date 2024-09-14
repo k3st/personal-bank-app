@@ -35,17 +35,17 @@ const MyBanks = async () => {
         />
         <div className="space-y-4">
           <h2 className="header-2">Your cards</h2>
-          <div className="flex  flex-wrap justify-start gap-6">
+          <div className="flex  flex-wrap justify-start gap-6 max-sm:justify-center ">
             {banks &&
               banks.map((bank, index) => (
-                <div>
+                <div className="">
                   <BankCard
                     key={index}
                     account={bank}
                     userName={bank.name || user.name}
                   />
-                  <div className="">
-                    <div className="flex flex-row justify-between pb-2 mt-5">
+                  <div className="mb-5">
+                    <div className="flex flex-row justify-between mb-2 mt-2">
                       <p className=" flex text-sm ">Spending this month</p>
                       <p className="flex text-sm text-gray-800">
                         $ {bank.currentBalance}
